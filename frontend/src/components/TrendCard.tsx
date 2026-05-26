@@ -6,7 +6,7 @@ interface Props {
 }
 
 function EngagementBar({ score }: { score: number }) {
-  const pct = Math.min(Math.round(score * 1000), 100)
+  const pct = Math.min(Math.round(score * 100), 100)
   return (
     <div className="mt-3">
       <div className="flex justify-between text-xs text-gray-400 mb-1">

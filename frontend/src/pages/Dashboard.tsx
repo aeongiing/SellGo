@@ -7,15 +7,15 @@ import type { Trend } from '../types'
 
 type Signal = Trend['signal']
 
+const COUNTS: Record<Signal, number> = {
+  NOW: trends.filter((t) => t.signal === 'NOW').length,
+  STABLE: trends.filter((t) => t.signal === 'STABLE').length,
+  EARLY: trends.filter((t) => t.signal === 'EARLY').length,
+}
+
 export default function Dashboard() {
   const [active, setActive] = useState<Signal>('NOW')
   const navigate = useNavigate()
-
-  const counts: Record<Signal, number> = {
-    NOW: trends.filter((t) => t.signal === 'NOW').length,
-    STABLE: trends.filter((t) => t.signal === 'STABLE').length,
-    EARLY: trends.filter((t) => t.signal === 'EARLY').length,
-  }
 
   const filtered = trends
     .filter((t) => t.signal === active)
@@ -33,7 +33,7 @@ export default function Dashboard() {
           마진 계산기 →
         </button>
       </div>
-      <TabBar active={active} onChange={setActive} counts={counts} />
+      <TabBar active={active} onChange={setActive} counts={COUNTS} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filtered.length === 0 ? (
           <p className="text-gray-400 col-span-full text-center py-12">데이터가 없어요</p>
