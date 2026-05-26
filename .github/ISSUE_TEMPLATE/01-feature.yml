@@ -1,0 +1,31 @@
+name: 기능 추가
+description: 새로운 기능 또는 화면 구현을 제안합니다.
+title: "feat: "
+labels: ["feat"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 기능 설명
+      description: 어떤 기능을 추가하려는지 간단히 적어주세요.
+      placeholder: 예) 트렌드 카드에서 리스팅 만들기 버튼을 누르면 리스팅 페이지로 이동한다.
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: 요구사항
+      description: 구현되어야 하는 조건을 체크리스트로 적어주세요.
+      placeholder: |
+        - [ ] 버튼 클릭 시 선택한 트렌드를 localStorage에 저장
+        - [ ] /listing 페이지로 이동
+        - [ ] 선택 데이터가 없으면 대시보드 복귀 버튼 표시
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 참고 사항
+      description: 디자인, API, 문서 링크 등이 있으면 적어주세요.
+    validations:
+      required: false

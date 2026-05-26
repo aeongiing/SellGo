@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "ko-KR"
+tone_instructions: "한국어로 간결하고 실용적으로 리뷰해 주세요. 버그, 보안, 타입 안정성, 테스트 누락을 우선적으로 짚어 주세요."
+
+reviews:
+  profile: "assertive"
+  high_level_summary: true
+  auto_review:
+    enabled: true
+    drafts: false
+  path_instructions:
+    - path: "frontend/src/**/*.{ts,tsx}"
+      instructions: "React, TypeScript, 접근성, 반응형 UI, 상태 관리 흐름을 중점적으로 확인해 주세요."
+    - path: "collect.py"
+      instructions: "API 오류 처리, 환경변수 사용, 네트워크 실패 처리, 데이터 저장 안정성을 중점적으로 확인해 주세요."
+    - path: "docs/**"
+      instructions: "문서가 현재 구현 상태와 일치하는지, 실행 방법이 빠지지 않았는지 확인해 주세요."
+
+chat:
+  art: false
