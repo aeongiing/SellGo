@@ -41,12 +41,13 @@ export default function Onboarding() {
   }
 
   const current = STEPS[step]
+  const displayStep = step + 1
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md">
-        <ProgressBar current={step + 1} total={STEPS.length} />
-        <p className="text-xs text-gray-400 mb-2">{step + 1} / {STEPS.length}</p>
+        <ProgressBar current={displayStep} total={STEPS.length} />
+        <p className="text-xs text-gray-400 mb-2">{displayStep} / {STEPS.length}</p>
         <h2 className="text-2xl font-bold text-gray-900 mb-8">{current.question}</h2>
         <div className="flex flex-col gap-3">
           {current.options.map((opt) => (
